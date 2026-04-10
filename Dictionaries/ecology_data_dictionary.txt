@@ -1,0 +1,62 @@
+
+PRAIRIE RESTORATION BIODIVERSITY STUDY - DATA DICTIONARY
+==========================================================
+
+STUDY OVERVIEW:
+Assessment of insect biodiversity in restored prairie sites compared to 
+unrestored control grasslands. Sampling conducted across 4 seasonal periods
+at 20 sites (10 restored, 10 control).
+
+Goal: Evaluate whether prairie restoration increases native insect biodiversity.
+
+SITE & SAMPLING IDENTIFIERS
+----------------------------
+observation_id          Unique observation ID (site_season combination)
+site_id                 Site identifier (REST_01-10, CTRL_01-10)
+habitat_type            Habitat classification ("Restored_Prairie" or "Control_Grassland")
+habitat_code            Numeric habitat code (1=Restored, 0=Control)
+season                  Sampling period (Spring, Early_Summer, Late_Summer, Fall)
+
+SITE CHARACTERISTICS
+--------------------
+site_area_ha            Site area in hectares
+restoration_age_yrs     Years since restoration began (NA for controls)
+distance_to_remnant_km  Distance to nearest natural habitat remnant (km)
+
+BIODIVERSITY METRICS
+--------------------
+species_richness        Total number of insect species observed
+total_abundance         Total individual insects collected
+shannon_index           Shannon diversity index (H')
+simpson_index           Simpson diversity index (1-D)
+evenness_J              Pielou's evenness index (J)
+
+TAXONOMIC COMPOSITION
+---------------------
+coleoptera_count        Beetles (Coleoptera) abundance
+hymenoptera_count       Bees, wasps, ants (Hymenoptera) abundance
+diptera_count           Flies (Diptera) abundance
+lepidoptera_count       Butterflies, moths (Lepidoptera) abundance
+hemiptera_count         True bugs (Hemiptera) abundance
+other_orders_count      Other insect orders combined
+
+FUNCTIONAL GROUPS
+-----------------
+native_species          Number of native species
+nonnative_species       Number of non-native species
+prop_native             Proportion of species that are native
+pollinator_abundance    Abundance of pollinating insects
+predator_abundance      Abundance of predatory insects
+
+ENVIRONMENTAL CONDITIONS (at sampling)
+--------------------------------------
+temp_celsius            Air temperature (°C)
+humidity_pct            Relative humidity (%)
+wind_speed_kmh          Wind speed (km/h)
+vegetation_height_cm    Mean vegetation height (cm)
+
+NOTES:
+- Repeated measures design (4 observations per site)
+- Consider mixed models with site as random effect
+- Seasonal variation expected in all metrics
+- Multiple diversity metrics are correlated

@@ -1,0 +1,73 @@
+
+CARDIOGUARD-X CLINICAL TRIAL - DATA DICTIONARY
+================================================
+
+STUDY OVERVIEW:
+A randomized, double-blind, placebo-controlled Phase 2b trial evaluating 
+CardioGuard-X (a novel anti-inflammatory compound) for reducing cardiovascular 
+inflammation markers in patients at high cardiovascular risk.
+
+Primary Endpoint: Change in hs-CRP from baseline to Week 12
+Secondary Endpoints: IL-6, fibrinogen, blood pressure changes, clinical response rate
+
+VARIABLE DESCRIPTIONS:
+
+IDENTIFIERS & DESIGN
+--------------------
+patient_id          Patient identifier (PT0001-PT0240)
+treatment_group     Treatment assignment ("CardioGuard-X" or "Placebo")
+treatment_code      Numeric treatment code (1=CardioGuard-X, 0=Placebo)
+site                Study site (Site_A through Site_F)
+
+DEMOGRAPHICS
+------------
+age                 Age in years at enrollment
+sex                 Sex ("Male" or "Female")
+bmi                 Body mass index (kg/m²)
+ethnicity           Self-reported ethnicity
+
+MEDICAL HISTORY
+---------------
+diabetes            History of type 2 diabetes (0=No, 1=Yes)
+hypertension        History of hypertension (0=No, 1=Yes)
+smoking_status      Smoking status ("Never", "Former", "Current")
+statin_use          Currently taking statin medication (0=No, 1=Yes)
+
+BASELINE CLINICAL MEASUREMENTS
+------------------------------
+baseline_sbp        Systolic blood pressure (mmHg)
+baseline_dbp        Diastolic blood pressure (mmHg)
+baseline_ldl        LDL cholesterol (mg/dL)
+baseline_hdl        HDL cholesterol (mg/dL)
+baseline_hba1c      Hemoglobin A1c (%)
+baseline_creatinine Serum creatinine (mg/dL)
+baseline_egfr       Estimated GFR (mL/min/1.73m²)
+baseline_hscrp      High-sensitivity C-reactive protein (mg/L)
+baseline_il6        Interleukin-6 (pg/mL)
+baseline_fibrinogen Fibrinogen (mg/dL)
+
+OUTCOME MEASUREMENTS
+--------------------
+week4_hscrp         hs-CRP at Week 4 (mg/L)
+week12_hscrp        hs-CRP at Week 12 (mg/L) - PRIMARY ENDPOINT
+week24_hscrp        hs-CRP at Week 24 (mg/L) - follow-up
+week12_il6          IL-6 at Week 12 (pg/mL)
+week12_fibrinogen   Fibrinogen at Week 12 (mg/dL)
+week12_sbp          Systolic BP at Week 12 (mmHg)
+week12_dbp          Diastolic BP at Week 12 (mmHg)
+
+DERIVED VARIABLES
+-----------------
+hscrp_pct_change    Percent change in hs-CRP from baseline to Week 12
+clinical_response   Binary response (1 if ≥20% reduction in hs-CRP, else 0)
+
+STUDY CONDUCT
+-------------
+adherence_pct       Treatment adherence (% of doses taken)
+any_adverse_event   Any adverse event reported (0=No, 1=Yes)
+serious_adverse_event Serious adverse event reported (0=No, 1=Yes)
+
+NOTES:
+- Missing values indicate patient dropout or missed visit
+- hs-CRP is the primary inflammatory biomarker of interest
+- Normal hs-CRP is typically <1 mg/L; 1-3 mg/L indicates moderate risk

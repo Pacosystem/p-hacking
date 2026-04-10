@@ -1,0 +1,70 @@
+
+PRECLINICAL ANXIOLYTIC STUDY - DATA DICTIONARY
+================================================
+
+STUDY OVERVIEW:
+Evaluation of NeuroCalmX, a novel anxiolytic compound, in C57BL/6 mice 
+using validated behavioral tests and physiological biomarkers.
+
+Goal: Assess anxiolytic efficacy and determine effective dose range.
+
+ANIMAL IDENTIFIERS & DESIGN
+----------------------------
+animal_id               Unique animal identifier (AN001-AN080)
+sex                     Animal sex ("Male" or "Female")
+dose_mgkg               NeuroCalmX dose in mg/kg (0, 5, 10, 20)
+dose_group              Dose category ("Vehicle", "Low", "Medium", "High")
+treatment_code          Binary treatment indicator (0=Vehicle, 1=Active)
+cage                    Cage identifier (for mixed-model analysis)
+body_weight_g           Body weight at study start (grams)
+age_weeks               Age at study start (weeks)
+baseline_anxiety_pct    Pre-treatment anxiety measure (% closed arm time)
+
+ELEVATED PLUS MAZE (EPM) - Gold standard anxiety test
+------------------------------------------------------
+epm_open_time_pct       % time spent in open arms (higher = less anxious)
+epm_open_entries        Number of entries into open arms
+epm_closed_entries      Number of entries into closed arms
+epm_total_distance_cm   Total distance traveled (locomotor activity)
+
+OPEN FIELD TEST (OFT) - Exploration and anxiety
+------------------------------------------------
+oft_center_time_sec     Time in center zone (higher = less anxious)
+oft_total_distance_cm   Total distance traveled
+oft_rearing_count       Number of rearing events (exploration)
+oft_grooming_sec        Time spent grooming (displacement behavior)
+
+LIGHT-DARK BOX (LDB) - Light aversion test
+-------------------------------------------
+ldb_light_time_sec      Time in light compartment (higher = less anxious)
+ldb_transitions         Number of crossings between compartments
+ldb_latency_to_light_sec Time to first entry into light (lower = less anxious)
+
+FORCED SWIM TEST (FST) - Depression-related behavior
+-----------------------------------------------------
+fst_immobility_sec      Time immobile (higher = more "depressed")
+fst_swimming_sec        Time actively swimming
+fst_climbing_sec        Time climbing walls
+
+PHYSIOLOGICAL MEASURES
+-----------------------
+cort_baseline_ngml      Baseline plasma corticosterone (ng/mL)
+cort_post_stress_ngml   Post-stress corticosterone
+cort_delta_ngml         Change in corticosterone (stress response)
+hrv_baseline_ms         Baseline heart rate variability (RMSSD, ms)
+hrv_post_stress_ms      Post-stress HRV
+temp_baseline_c         Baseline body temperature (°C)
+temp_post_stress_c      Post-stress body temperature
+food_intake_24h_g       24-hour food intake post-treatment (grams)
+
+DERIVED MEASURES
+-----------------
+anxiety_index           Composite anxiety score (0-100, higher = more anxious)
+treatment_response_pct  % change from baseline anxiety
+
+NOTES:
+- 80 animals total (10 per group, balanced by sex)
+- Consider sex as covariate or stratification factor
+- Cage effects present (use mixed models)
+- Multiple outcomes allow multiverse analysis
+- Dose-response analysis possible (linear trend, ANOVA)

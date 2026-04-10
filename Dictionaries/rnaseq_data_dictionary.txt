@@ -1,0 +1,31 @@
+
+RNA-SEQ DIFFERENTIAL EXPRESSION STUDY - DATA DICTIONARY
+=========================================================
+
+STUDY OVERVIEW:
+Transcriptomic analysis of HepG2 hepatocytes treated with MetaboMod-7, 
+a novel metabolic modulator compound, versus vehicle control.
+
+Goal: Identify genes differentially expressed in response to treatment.
+
+SAMPLE METADATA (rnaseq_sample_metadata.csv)
+--------------------------------------------
+sample_id           Unique sample identifier (S001-S048)
+treatment_group     Treatment condition ("Treated" or "Control")
+treatment_code      Numeric treatment code (1=Treated, 0=Control)
+batch               Processing batch (Batch_1, Batch_2, Batch_3)
+passage_number      Cell passage number at time of experiment
+rin_score           RNA Integrity Number (quality metric, 1-10)
+library_size        Total mapped reads (sequencing depth)
+
+EXPRESSION MATRIX (rnaseq_expression_matrix.csv)
+------------------------------------------------
+sample_id           Sample identifier
+GENE_0001-0500      Log2-transformed expression values for 500 genes
+
+NOTES:
+- Expression values are log2(counts + 1) normalized
+- Library size varies between samples (may need normalization)
+- Batch effects present due to different processing dates
+- Gene modules may show correlated expression patterns
+- Standard analysis: DESeq2, edgeR, or limma-voom recommended

@@ -1,0 +1,41 @@
+
+ANTIMICROBIAL PEPTIDE EFFICACY STUDY - DATA DICTIONARY
+========================================================
+
+STUDY OVERVIEW:
+Evaluation of AMP-247, a novel antimicrobial peptide, against Pseudomonas 
+aeruginosa strains. Testing planktonic growth inhibition and biofilm 
+prevention activity.
+
+Goal: Determine minimum inhibitory concentration (MIC) and anti-biofilm activity.
+
+EXPERIMENTAL IDENTIFIERS
+-------------------------
+observation_id          Unique observation identifier
+strain                  Bacterial strain (PAO1, PA14, Clinical_01-03)
+concentration_ugml      AMP-247 concentration in µg/mL (0 = vehicle control)
+treatment               Treatment category ("AMP-247" or "Vehicle")
+timepoint_hrs           Hours post-inoculation (4, 8, 12, 24)
+biological_replicate    Biological replicate number (1-3)
+technical_replicate     Technical replicate number (1-3)
+plate                   Assay plate identifier (batch effect source)
+
+PRIMARY OUTCOMES
+----------------
+od600_planktonic        Optical density at 600nm (planktonic growth)
+log10_cfu_ml            Log10 colony forming units per mL (viable cells)
+biofilm_od570           Crystal violet biofilm assay (OD570)
+metabolic_rfu           Resazurin metabolic activity (relative fluorescence units)
+
+DERIVED OUTCOMES
+----------------
+pct_inhibition_od600    Percent inhibition of planktonic growth vs vehicle
+pct_inhibition_biofilm  Percent inhibition of biofilm vs vehicle
+pct_inhibition_metabolic Percent inhibition of metabolic activity vs vehicle
+
+NOTES:
+- Three biological replicates each with three technical replicates
+- Plate effects may influence results (consider as covariate)
+- Standard MIC = lowest concentration with ≥90% growth inhibition
+- Multiple comparisons across strains and timepoints
+- Consider dose-response modeling (4-parameter logistic)
